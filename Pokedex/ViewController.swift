@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    
     var pokemon: [Pokemon] = []
     
     func capitalize(text: String) -> String {
@@ -60,9 +61,10 @@ class ViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PokemonSegue" {
             if let destination = segue.destination as? PokemonViewController {
-                destination.pokemon = pokemon[tableView.indexPathForSelectedRow!.row] 
+                destination.pokemon = pokemon[tableView.indexPathForSelectedRow!.row]
             }
         }
     }
 }
+
 
