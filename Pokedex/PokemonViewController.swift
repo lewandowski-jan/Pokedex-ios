@@ -16,8 +16,11 @@ class PokemonViewController: UIViewController {
     
     var pokemon: Pokemon!
     
+    let backgroundImageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackground()
         
         type1Label.text = ""
         type2Label.text = ""
@@ -54,5 +57,15 @@ class PokemonViewController: UIViewController {
                 print("\(error)")
             }
         }.resume()
+    }
+    
+    func setBackground() {
+        view.addSubview(backgroundImageView)
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
+        backgroundImageView.image = UIImage(named: "background")
+        view.sendSubviewToBack(backgroundImageView)
     }
 }
