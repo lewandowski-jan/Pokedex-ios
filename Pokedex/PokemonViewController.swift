@@ -14,6 +14,7 @@ class PokemonViewController: UIViewController {
     @IBOutlet var type1Label: UILabel!
     @IBOutlet var type2Label: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var abilityLabel: UILabel!
     
     var pokemon: Pokemon!
     
@@ -24,10 +25,10 @@ class PokemonViewController: UIViewController {
     }
     
     func setImage(from url: String) {
-        self.imageView.layer.borderColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
+        self.imageView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
         self.imageView.layer.masksToBounds = true
         self.imageView.layer.borderWidth = 4
-        self.imageView.layer.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0).cgColor
+        self.imageView.layer.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0).cgColor
         guard let imageURL = URL(string: url) else {return}
         
         DispatchQueue.global().async {
@@ -42,12 +43,13 @@ class PokemonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackground()
+        //setBackground()
         
         nameLabel.text = ""
         numberLabel.text = ""
         type1Label.text = ""
         type2Label.text = ""
+        abilityLabel.text = ""
         
         let url = URL(string: pokemon.url)
         
@@ -77,6 +79,8 @@ class PokemonViewController: UIViewController {
                     }
                     
                     self.setImage(from: pokemonData.sprites.front_default)
+                    
+                    self.setFlavorText(id: pokemonData.id)
                 }
             }
             catch let error {
@@ -93,5 +97,35 @@ class PokemonViewController: UIViewController {
         
         backgroundImageView.image = UIImage(named: "background")
         view.sendSubviewToBack(backgroundImageView)
+    }
+    
+    func setFlavorText(id: Int){
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon-species/" + String(id) + "/")
+        
+        guard let u = url else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: u) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+        
+            do {
+                let flavorData = try JSONDecoder().decode(FlavorData.self, from: data)
+                
+                for flavorEntry in flavorData.flavor_text_entries {
+                    if flavorEntry.language.name == "en" {
+                        DispatchQueue.main.async {
+                            self.abilityLabel.text = flavorEntry.flavor_text.replacingOccurrences(of: "\n", with: " ")
+                        }
+                        break
+                    }
+                }
+            }
+            catch let error {
+                print("\(error)")
+            }
+        }.resume()
     }
 }

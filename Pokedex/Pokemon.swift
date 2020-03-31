@@ -36,3 +36,17 @@ struct PokemonTypeEntry: Codable {
     let slot: Int
     let type: PokemonType
 }
+
+struct FlavorData: Codable {
+    let flavor_text_entries: [FlavorTextEntry]
+}
+
+struct FlavorTextEntry: Codable {
+    let flavor_text: String
+    let language: PokemonLanguage
+}
+
+struct PokemonLanguage: Codable {
+    let name: String
+    let url: String
+}
