@@ -44,6 +44,8 @@ class PokemonViewController: UIViewController {
         super.viewDidLoad()
         setBackground()
         
+        nameLabel.text = ""
+        numberLabel.text = ""
         type1Label.text = ""
         type2Label.text = ""
         

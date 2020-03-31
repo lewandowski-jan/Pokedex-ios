@@ -66,5 +66,3 @@ class ViewController: UITableViewController {
         }
     }
 }
-
-
