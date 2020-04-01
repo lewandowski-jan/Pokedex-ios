@@ -89,7 +89,7 @@ class PokemonViewController: UIViewController {
         }.resume()
     }
     
-    func setBackground() {
+    /*func setBackground() {
         view.addSubview(backgroundImageView)
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -97,7 +97,7 @@ class PokemonViewController: UIViewController {
         
         backgroundImageView.image = UIImage(named: "background")
         view.sendSubviewToBack(backgroundImageView)
-    }
+    }*/
     
     func setFlavorText(id: Int){
         let url = URL(string: "https://pokeapi.co/api/v2/pokemon-species/" + String(id) + "/")
