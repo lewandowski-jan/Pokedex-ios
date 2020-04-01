@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pokedex-->
+        <!--Pokédex-->
         <scene sceneID="sXj-nJ-Hxi">
             <objects>
                 <tableViewController id="MV0-VO-Ect" customClass="ViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,9 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="D7C-Hx-FdH">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PokemonCell" textLabel="VKF-Av-TWM" style="IBUITableViewCellStyleDefault" id="CDe-bG-B1W">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CDe-bG-B1W" id="MOM-1I-bMd">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
@@ -42,7 +47,11 @@
                             <outlet property="delegate" destination="MV0-VO-Ect" id="Mpn-qs-eJi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pokedex" id="KLs-Nd-vh5"/>
+                    <navigationItem key="navigationItem" title="Pokédex" id="KLs-Nd-vh5"/>
+                    <connections>
+                        <outlet property="searchBar" destination="D7C-Hx-FdH" id="rVk-6f-qTs"/>
+                        <outlet property="table" destination="Uvl-gV-Jts" id="ljp-6r-2Pr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73F-Ob-pVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
