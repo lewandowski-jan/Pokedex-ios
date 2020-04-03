@@ -29,10 +29,6 @@ class PokemonViewController: UIViewController {
     }
     
     func setImage(from url: String) {
-        self.imageView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
-        self.imageView.layer.masksToBounds = true
-        self.imageView.layer.borderWidth = 4
-        self.imageView.layer.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0).cgColor
         guard let imageURL = URL(string: url) else {return}
         
         DispatchQueue.global().async {
@@ -66,6 +62,10 @@ class PokemonViewController: UIViewController {
         type2Label.text = ""
         abilityLabel.text = ""
         
+        self.imageView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+        self.imageView.layer.masksToBounds = true
+        self.imageView.layer.borderWidth = 4
+        self.imageView.layer.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0).cgColor
         self.imageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
         self.imageView.addGestureRecognizer(tapGesture)
@@ -99,7 +99,7 @@ class PokemonViewController: UIViewController {
                     
                     self.front_photo = pokemonData.sprites.front_default
                     self.back_photo = pokemonData.sprites.back_default
-                    self.setImage(from: pokemonData.sprites.front_default)
+                    self.setImage(from: self.front_photo)
                     
                     self.setFlavorText(id: pokemonData.id)
                 }
@@ -110,7 +110,7 @@ class PokemonViewController: UIViewController {
         }.resume()
     }
     
-    /*func setBackground() {
+    func setBackground() {
         view.addSubview(backgroundImageView)
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -118,7 +118,7 @@ class PokemonViewController: UIViewController {
         
         backgroundImageView.image = UIImage(named: "background")
         view.sendSubviewToBack(backgroundImageView)
-    }*/
+    }
     
     func setFlavorText(id: Int){
         let url = URL(string: "https://pokeapi.co/api/v2/pokemon-species/" + String(id) + "/")
