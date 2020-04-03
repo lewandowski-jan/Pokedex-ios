@@ -66,26 +66,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16T-gp-mUA">
-                                <rect key="frame" x="151" y="300" width="112.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <rect key="frame" x="145.5" y="300" width="123" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbD-7P-PDb">
-                                <rect key="frame" x="181.5" y="342" width="51" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="178" y="332" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poison" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EF-KD-Jnb">
-                                <rect key="frame" x="181.5" y="374" width="51.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="180" y="367" width="54.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQm-pt-nQo">
-                                <rect key="frame" x="185" y="400" width="44.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="183.5" y="393" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -98,25 +98,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG2-1H-BG7">
-                                <rect key="frame" x="10" y="431" width="394" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="15" y="424" width="384" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hG2-1H-BG7" firstAttribute="leading" secondItem="eA2-in-FDR" secondAttribute="leading" constant="10" id="1Wh-hh-FdO"/>
+                            <constraint firstItem="hG2-1H-BG7" firstAttribute="leading" secondItem="eA2-in-FDR" secondAttribute="leading" constant="15" id="1Wh-hh-FdO"/>
                             <constraint firstItem="hG2-1H-BG7" firstAttribute="top" secondItem="NQm-pt-nQo" secondAttribute="bottom" constant="10" id="4oT-aM-lKu"/>
                             <constraint firstItem="kpa-vs-riG" firstAttribute="centerX" secondItem="EwT-BE-gr5" secondAttribute="centerX" id="CME-uB-fye"/>
                             <constraint firstItem="NQm-pt-nQo" firstAttribute="centerX" secondItem="EwT-BE-gr5" secondAttribute="centerX" id="E5v-Ey-pTX"/>
                             <constraint firstItem="16T-gp-mUA" firstAttribute="centerX" secondItem="EwT-BE-gr5" secondAttribute="centerX" id="FA8-u4-4B5"/>
                             <constraint firstItem="8EF-KD-Jnb" firstAttribute="centerX" secondItem="EwT-BE-gr5" secondAttribute="centerX" id="QrL-hL-4TG"/>
-                            <constraint firstItem="eA2-in-FDR" firstAttribute="trailing" secondItem="hG2-1H-BG7" secondAttribute="trailing" constant="10" id="c1o-Vo-BHv"/>
+                            <constraint firstItem="eA2-in-FDR" firstAttribute="trailing" secondItem="hG2-1H-BG7" secondAttribute="trailing" constant="15" id="c1o-Vo-BHv"/>
                             <constraint firstItem="NQm-pt-nQo" firstAttribute="top" secondItem="8EF-KD-Jnb" secondAttribute="bottom" constant="5" id="iIw-fT-Tkh"/>
                             <constraint firstItem="ZbD-7P-PDb" firstAttribute="centerX" secondItem="EwT-BE-gr5" secondAttribute="centerX" id="oXE-9F-uIv"/>
                             <constraint firstItem="8EF-KD-Jnb" firstAttribute="top" secondItem="ZbD-7P-PDb" secondAttribute="bottom" constant="5" id="uTi-C2-1aE"/>
-                            <constraint firstItem="ZbD-7P-PDb" firstAttribute="top" secondItem="16T-gp-mUA" secondAttribute="bottom" constant="10" id="uUc-BJ-S9Y"/>
+                            <constraint firstItem="ZbD-7P-PDb" firstAttribute="top" secondItem="16T-gp-mUA" secondAttribute="bottom" id="uUc-BJ-S9Y"/>
                             <constraint firstItem="kpa-vs-riG" firstAttribute="top" secondItem="eA2-in-FDR" secondAttribute="top" constant="10" id="wl9-PT-1cR"/>
                             <constraint firstItem="16T-gp-mUA" firstAttribute="top" secondItem="kpa-vs-riG" secondAttribute="bottom" constant="10" id="xhc-VA-2Hz"/>
                         </constraints>
