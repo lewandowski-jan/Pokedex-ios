@@ -91,6 +91,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kpa-vs-riG">
                                 <rect key="frame" x="111" y="106" width="192" height="192"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="192" id="2tg-BI-R2E" userLabel="height = 192"/>
                                     <constraint firstAttribute="width" constant="192" id="KWY-Gz-lnk"/>

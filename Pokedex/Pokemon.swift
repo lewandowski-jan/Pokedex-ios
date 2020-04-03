@@ -30,6 +30,7 @@ struct PokemonType: Codable {
 
 struct PokemonSprites: Codable {
     let front_default: String
+    let back_default: String
 }
 
 struct PokemonTypeEntry: Codable {

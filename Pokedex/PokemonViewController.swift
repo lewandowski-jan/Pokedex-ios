@@ -20,6 +20,10 @@ class PokemonViewController: UIViewController {
     
     let backgroundImageView = UIImageView()
     
+    var is_photo_front: Bool = true
+    var front_photo: String = ""
+    var back_photo: String = ""
+    
     func capitalize(text: String) -> String {
         return text.prefix(1).uppercased() + text.dropFirst()
     }
@@ -41,6 +45,17 @@ class PokemonViewController: UIViewController {
         }
     }
     
+    @objc func tapGesture() {
+        if self.is_photo_front {
+            self.setImage(from: back_photo)
+            self.is_photo_front = false
+        }
+        else {
+            self.setImage(from: front_photo)
+            self.is_photo_front = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //setBackground()
@@ -50,6 +65,10 @@ class PokemonViewController: UIViewController {
         type1Label.text = ""
         type2Label.text = ""
         abilityLabel.text = ""
+        
+        self.imageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
+        self.imageView.addGestureRecognizer(tapGesture)
         
         let url = URL(string: pokemon.url)
         
@@ -78,6 +97,8 @@ class PokemonViewController: UIViewController {
                         }
                     }
                     
+                    self.front_photo = pokemonData.sprites.front_default
+                    self.back_photo = pokemonData.sprites.back_default
                     self.setImage(from: pokemonData.sprites.front_default)
                     
                     self.setFlavorText(id: pokemonData.id)
@@ -127,5 +148,9 @@ class PokemonViewController: UIViewController {
                 print("\(error)")
             }
         }.resume()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
